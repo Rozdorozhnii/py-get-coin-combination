@@ -33,7 +33,8 @@ class TestGetCoinCombination:
             ),
             pytest.param(
                 17, [2, 1, 1, 0],
-                id="should return '2' pennies, '1' nickel and '1' dime when '17' was passed"
+                id="should return '2' pennies, '1' nickel "
+                   "and '1' dime when '17' was passed"
             ),
             pytest.param(
                 25, [0, 0, 0, 1],
@@ -41,11 +42,13 @@ class TestGetCoinCombination:
             ),
             pytest.param(
                 41, [1, 1, 1, 1],
-                id="should return '1' penny, '1' nickel, '1' dime and '1' quarter when '41' was passed"
+                id="should return '1' penny, '1' nickel, '1' dime "
+                   "and '1' quarter when '41' was passed"
             ),
             pytest.param(
                 72, [2, 0, 2, 2],
-                id="should return '2' penny, '2' dime and '2' quarter when '72' was passed"
+                id="should return '2' penny, '2' dime "
+                   "and '2' quarter when '72' was passed"
             ),
             pytest.param(
                 75, [0, 0, 0, 3],
@@ -53,9 +56,14 @@ class TestGetCoinCombination:
             ),
             pytest.param(
                 104, [4, 0, 0, 4],
-                id="should return '4' pennies and '4' quarters when '104' was passed"
+                id="should return '4' pennies and '4' quarters "
+                   "when '104' was passed"
             ),
         ]
     )
-    def test_get_coin_combination(self, amount: int, expected_result: list) -> None:
+    def test_get_coin_combination(
+            self,
+            amount: int,
+            expected_result: list,
+    ) -> None:
         assert get_coin_combination(amount) == expected_result
